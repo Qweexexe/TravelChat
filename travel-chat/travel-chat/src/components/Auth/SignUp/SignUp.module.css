@@ -1,0 +1,92 @@
+
+.wrapper {
+    position: relative;
+    margin-top: 70px;
+    width: 35vw;
+
+}
+
+
+.welcome {
+    margin-bottom: 70px;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 42px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+
+.register {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+.image {
+    width: 500px;
+    margin-bottom: 50px;
+}
+
+
+.continue_brands {
+    width: 100%;
+    margin: 50px 0 20px 0;
+}
+
+.brand {
+    margin: 0 10px 10px 30px;
+    padding: 0 15px;
+    border: 1px solid rgba(100, 100, 100, 0.3);
+    border-radius: 4px;
+}
+
+
+.brand:hover {
+    background: rgba(200, 200, 200, 0.3);
+}
+
+
+.privacy_policy {
+    width: 100%;
+    height: 28px;
+    font-size: 15px;
+    text-align: center;
+    color: rgba(50,50,50, 0.4);
+}
+
+
+.privacy_link {
+    text-decoration: none;
+    color: #876FD1;
+}
+
+
+@media screen and (max-width: 1050px) {
+    .wrapper {
+        width: 60vw;
+    }
+}
+
+
+@media screen and (max-width: 600px) {
+    .wrapper {
+        width: 290px;
+    }
+
+    .welcome {
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+
+    .image {
+        width: 90vw;
+    }
+
+
+    .continue_brands {
+        margin: 20px 10px;
+    }
+}

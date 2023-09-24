@@ -1,0 +1,140 @@
+
+
+
+.wrapper {
+    position: relative;
+    margin-top: 170px;
+    width: 35vw;
+
+}
+
+
+.welcome {
+    margin-bottom: 50px;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 42px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+
+
+.remember {
+    width: 100%;
+    height: 20px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.remember_check_wrapper {
+}
+
+
+.remember_check {
+    padding: 5px;
+    border: 2px solid #0B1644;
+}
+
+
+.input_remember {
+    margin-left: 10px;
+    font-size: 15px;
+    color: rgba(100, 100, 100, 0.5);
+}
+
+
+.forgot_password {
+    text-decoration: none;
+}
+
+
+.continue_with {
+    width: 100%;
+    margin-top: 70px;
+}
+
+.line {
+    width: 30%;
+    height: 3px;
+    border-radius: 4px;
+    background: rgba(100, 100, 100, 0.3);
+}
+
+
+.continue_with_text {
+    margin: 0 20px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+
+
+.continue_brands {
+    width: 100%;
+    margin-top: 50px;
+}
+
+.brand {
+    margin: 0 10px;
+    padding: 0 15px;
+    border: 1px solid rgba(100, 100, 100, 0.3);
+    border-radius: 4px;
+}
+
+
+.brand:hover {
+    background: rgba(200, 200, 200, 0.3);
+}
+
+
+
+@media screen and (max-width: 1050px) {
+    .wrapper {
+        width: 60vw;
+        margin-top: 55px;
+    }
+
+    .welcome {
+        margin-bottom: 20px;
+    }
+
+    .input {
+        width: 280px;
+        height: 25px;
+    }
+
+    .input_header {
+        width: 280px;
+        font-size: 20px;
+    }
+
+    .continue_with {
+        margin-top: 30px;
+    }
+
+    .continue_with_text {
+        font-size: 11px;
+    }
+
+    .line {
+        width: 20%;
+    }
+    .remember {
+        width: 280px;
+    }
+
+}
+
+
+@media screen and (max-width: 500px) {
+    .wrapper {
+        width: 290px;
+    }
+}

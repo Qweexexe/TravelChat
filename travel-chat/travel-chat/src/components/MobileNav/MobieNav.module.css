@@ -1,0 +1,43 @@
+
+.wrapper {
+    position: absolute;
+    top: 71px;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: white;
+}
+
+
+
+.exit {
+    width: 70px;
+    position: absolute;
+    top: -25px;
+    left: 93vw;
+    transform: rotate(45deg);
+}
+
+
+.line {
+    width: 30px;
+    height: 3px;
+    border-radius: 5px;
+    background: #0B1644;
+}
+
+.line_one{
+}
+
+
+.line_two {
+
+    transform: rotate(90deg) translate(-2px);
+}
+
+
+@media screen and (max-width: 550px){
+    .exit {
+        left: 85vw;
+    }
+}

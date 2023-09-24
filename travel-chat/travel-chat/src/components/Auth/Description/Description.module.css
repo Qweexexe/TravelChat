@@ -1,0 +1,25 @@
+
+.centered_column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.centered_row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.description_wrapper {
+    margin-top: 30px;
+}
+
+
+.description_link {
+    margin-left: 10px;
+    color: #876FD1;
+    text-decoration: none;
+}

@@ -1,0 +1,13 @@
+* {
+  color: #0B1644;
+}
+
+body {
+  overflow-x: hidden;
+}
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
