@@ -1,0 +1,54 @@
+.footer {
+    width: 100vw;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0B1644;
+}
+
+.footer_link_wrapper {
+    margin-right: 70px;
+}
+
+.footer_logo {
+    margin-left: 70px;
+    color: #ffffff;
+}
+
+.footer_links {
+    margin-left: 70px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+
+.footer_description {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0B1644;
+
+}
+
+.year {
+    margin-left: 110px;
+}
+
+.authors {
+    margin-right: 110px;
+}
+
+.year, .authors {
+    color: #ffffff;
+}
+
+
+@media screen and (max-width: 1050px) {
+      .footer_links, .footer_description {
+        display: none;
+    }
+}

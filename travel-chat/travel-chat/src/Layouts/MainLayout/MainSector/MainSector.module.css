@@ -1,0 +1,59 @@
+.wrapper_map {
+    width: 100vw;
+    height: 736px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.image {
+    object-fit: fill;
+}
+
+.text_wrapper {
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.text {
+    font-size: 76px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 104px;
+}
+
+
+.text_lower {
+    max-width: 850px;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 42px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 1050px) {
+    .text {
+        margin: 240px 0 0 10px;
+        font-size: 55px;
+        line-height: 100px;
+        font-weight: 900;
+    }
+
+    .text_lower {
+        width: 90vw;
+        font-size: 25px;
+        text-align: left;
+    }
+}

@@ -7,5 +7,4 @@ export const LoginRequest = (username, password) => {
             username: username,
             password: password
         })
-
 }

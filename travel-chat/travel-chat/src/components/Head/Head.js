@@ -1,21 +1,26 @@
 import style from './Head.module.css'
 import logo from '../assets/logo twp.svg'
-import lang from '../assets/Vector.png'
 import PublicRoutes from "../Navigation/PublicRoutes";
 import {useEffect, useState} from "react";
 import PrivateRoutes from "../Navigation/PrivateRoutes";
 import MobileNav from "../MobileNav/MobileNav";
-import {useDispatch, useSelector} from "react-redux";
-import {useNavigate} from "react-router-dom";
-import {closeWindow, toggleWindow} from "../redux/actions/actions";
+import {Route, Routes, useLocation, useNavigate} from "react-router-dom";
+import Burger from "../../common/Burger/Burger";
 
 
-const Head = () => {
-    let data = '1'
+const Head = ({burger, search}) => {
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-    const selector = useSelector(state => state.mobileNav.isOpened)
-    const dispatch = useDispatch()
+    const [isOpen, setIsOpen] = useState(false)
     const navigate = useNavigate()
+
+    const toggleWindow = () => {
+        setIsOpen(!isOpen)
+    }
+
+    const closeWindow = () => {
+        setIsOpen(false)
+    }
+
     useEffect(() => {
         const handleResize = () => {
             setWindowWidth(window.innerWidth);
@@ -29,30 +34,26 @@ const Head = () => {
     }, []);
 
     return (
-        <div className={style.wrapper}>
+        <header className={style.wrapper}>
             <div className={style.content}>
                 <img src={logo} className={style.logo} onClick={() => {
-                    dispatch(closeWindow())
+                    closeWindow()
                     navigate('/')
                 }}/>
-                <div className={style.nav}>
+                <nav className={style.nav}>
                     {
                         windowWidth <= 1175 ? (
-                            !selector && <div className={style.burger} onClick={() => dispatch(toggleWindow())}>
-                                <div className={style.burger_line}></div>
-                                <div className={style.burger_line}></div>
-                                <div className={style.burger_line}></div>
-                            </div>
+                            burger && <Burger toggle={toggleWindow}/>
                         ) : (
-                            data === '0' ? <PublicRoutes/> : <PrivateRoutes/>
+                            <PublicRoutes/>
                         )
                     }
                     {
-                        selector && <MobileNav/>
+                        isOpen && <MobileNav toggle={toggleWindow}/>
                     }
-                </div>
+                </nav>
             </div>
-        </div>
+        </header>
     )
 }
 

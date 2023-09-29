@@ -1,11 +1,8 @@
 import style from './Routes.module.css'
 import {Link} from "react-router-dom";
 import {publiclinks} from './links'
-import {useDispatch} from "react-redux";
-import {closeWindow} from "../redux/actions/actions";
 
-const PublicRoutes = () => {
-    const dispatch = useDispatch()
+const PublicRoutes = ({toggle}) => {
     return (
         <div className={style.wrapper}>
             {
@@ -13,7 +10,7 @@ const PublicRoutes = () => {
                     <Link
                         to={el.href}
                         className={`${style.link} ${style.text}`}
-                        onClick={() => dispatch(closeWindow())}
+                        onClick={toggle}
                         key={index}
                     >
                         {el.title}

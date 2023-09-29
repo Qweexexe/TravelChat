@@ -1,0 +1,132 @@
+
+.wrapper {
+    position: relative;
+    margin-top: 70px;
+    width: 35vw;
+}
+
+
+.description {
+    height: 200px;
+    margin-bottom: 30px;
+}
+
+
+.welcome {
+    margin-bottom: 70px;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 42px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+
+.step {
+    font-size: 25px;
+    font-weight: 600;
+    line-height: 42px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+
+.photo {
+    position: relative;
+    margin-bottom: 30px;
+    border: 1px solid #371E84;
+    border-radius: 50%;
+}
+
+
+.photo_icon {
+    position: absolute;
+    top: 70%;
+    left: 75%;
+    width: 30px;
+    height: auto;
+    padding: 20px;
+    border: 2px solid #371E84;
+    border-radius: 50%;
+    background: #ffffff;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.photo_icon:hover {
+    background: #D7D2E6;
+}
+
+
+
+.photo_place {
+    position: relative;
+    width: 35vw;
+}
+
+.buttons {
+    width: 100%;
+}
+
+.button {
+    width: 80%;
+    height: 58px;
+    margin: 50px 0 20px 0;
+    font-size: 22px;
+    font-weight: 600;
+    border-radius: 4px;
+    color: #ffffff;
+    background: #371E84;
+    cursor: pointer;
+}
+
+
+.button:hover {
+    background: #0B1644;
+}
+
+
+.button_skip {
+     width: 80%;
+    height: 58px;
+    margin: 50px 0 20px 0;
+    font-size: 22px;
+    font-weight: 600;
+    border-radius: 4px;
+    color: #371E84;
+    border: 3px solid #371E84;
+    background: none;
+    cursor: pointer;
+}
+
+
+.button_skip:hover {
+    background: #D7D2E6;
+}
+
+.camera {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    background: #371E84;
+}
+
+
+.screenshot {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+@media screen and (max-width: 1050px) {
+    .wrapper {
+        width: 100vw;
+    }
+
+    .buttons {
+        width: 80vw;
+    }
+
+}
