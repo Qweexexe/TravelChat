@@ -91,7 +91,7 @@ const Profile = () => {
                             <div className={`${style.buttons} ${flex.centered_column}`}>
                                 <button
                                     className={`${style.button} ${flex.centered_column}`}
-                                    onClick={() => photo.background === '#ccc' ? handleMenuOpen : navigate('/')}
+                                    onClick={() => photo.background === '#ccc' ? handleMenuOpen :  navigate('/')}
                                 >Submit
                                 </button>
                                 <button className={`${style.button_skip} ${flex.centered_column}`}>Skip for now</button>

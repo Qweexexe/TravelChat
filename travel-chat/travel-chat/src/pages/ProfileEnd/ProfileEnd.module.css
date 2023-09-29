@@ -1,0 +1,15 @@
+
+
+
+.wrapper {
+    position: relative;
+    margin-top: 70px;
+    width: 35vw;
+}
+
+
+@media screen and (max-width: 1000px) {
+    .wrapper {
+        width: 80vw;
+    }
+}
