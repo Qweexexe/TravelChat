@@ -5,14 +5,22 @@ import DescriptionGuest from "../../components/Description/DescriptionGuest";
 import {usernameField} from "../../components/FormInputs/FormInputs";
 import {useState} from "react";
 import Head from "../../components/Head/Head";
+import {guestSignUp} from "../../components/server/Guest";
+import {useNavigate} from "react-router-dom";
 
 const Guest = () => {
+    const navigate = useNavigate()
     const [input, setInput] = useState('')
 
      const usernameValid = new RegExp(usernameField.pattern).test(input)
 
     const handleInputChange = (e) => {
         setInput(e.target.value)
+    }
+
+    const handleGuestLogin = () => {
+        guestSignUp(input)
+        navigate('/')
     }
 
     return  (
@@ -32,7 +40,7 @@ const Guest = () => {
                 input.length > 0 && !usernameValid &&
                     (<p className={style.message}>{usernameField.errorMessage}</p>)
             }
-            <button className={`${style.button} ${flex.centered_column}`}>Go to Chat</button>
+            <button className={`${style.button} ${flex.centered_column}`} onClick={handleGuestLogin}>Go to Chat</button>
             <DescriptionGuest/>
         </form>
         </>

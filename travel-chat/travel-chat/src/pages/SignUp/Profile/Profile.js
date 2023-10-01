@@ -1,24 +1,37 @@
 import style from './Profile.module.css'
 import flex from '../../../components/Template/Template.module.css'
-import photoLogo from '../../../components/assets/add_a_photo_FILL0_wght400_GRAD0_opsz48 1.svg'
-import {useRef, useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import Webcam from "react-webcam";
 import Head from "../../../components/Head/Head";
 import ProfileChooseCamera from "../../../components/ProfileChooseCamera/ProfileChooseCamera";
 import {useNavigate} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {setPhoto} from "../../../components/redux/actions/actions";
 
 const Profile = () => {
+    const dispatch = useDispatch()
     const navigate = useNavigate()
+    const [windowWidth, setWindowWidth] = useState('300px')
     const [cameraOn, setCameraOn] = useState(false)
     const [screenshot, setScreenshot] = useState('')
     const [menuOpen, setMenuOpen] = useState(false)
     const videoRef = useRef(null)
     const photo = {
-        width: '300px',
-        height: '300px',
+        width: windowWidth > 1000 ? '300px' : '200px',
+        height: windowWidth > 1000 ? '300px' : '200px',
         background: screenshot ? screenshot : '#ccc'
     }
 
+     useEffect(()=> {
+        window.addEventListener('resize', windowResize)
+        window.removeEventListener('resize', windowResize)
+    },[])
+
+
+
+    const windowResize = () => {
+        setWindowWidth(window.innerWidth)
+    }
 
     const handleCloseCamera = () => {
         setCameraOn(false)
@@ -44,9 +57,13 @@ const Profile = () => {
         }
     }
 
-
-    const handleMakePhoto = (e) => {
+    const handleMakePhoto = () => {
         if (videoRef.current) setScreenshot(videoRef.current.getScreenshot())
+    }
+
+    const checkValidate = () => {
+        dispatch(setPhoto(screenshot))
+        navigate('/signup/account/profile/end')
     }
 
     return (
@@ -55,6 +72,7 @@ const Profile = () => {
             <div className={`${style.wrapper} ${flex.centered_column}`}>
                 <div className={`${style.description} ${flex.centered_column}`}>
                     <h1 className={style.welcome}>Complete your profile</h1>
+                    <p className={style.additional}>Add profile Information</p>
                     <p className={style.step}>Step 1/2</p>
                 </div>
                 {cameraOn ? (
@@ -86,12 +104,11 @@ const Profile = () => {
                         <div className={`${style.photo_place} ${flex.centered_column}`}>
                             <div className={`${style.photo} ${flex.centered_column}`} style={photo}>
                                 <img src={screenshot} className={style.screenshot}/>
-                                <img src={photoLogo} onClick={handleOpenCamera} className={style.photo_icon}/>
                             </div>
                             <div className={`${style.buttons} ${flex.centered_column}`}>
                                 <button
                                     className={`${style.button} ${flex.centered_column}`}
-                                    onClick={() => photo.background === '#ccc' ? handleMenuOpen :  navigate('/')}
+                                    onClick={() => (photo.background === '#ccc' ? handleMenuOpen() : checkValidate())}
                                 >Submit
                                 </button>
                                 <button className={`${style.button_skip} ${flex.centered_column}`}>Skip for now</button>
@@ -101,7 +118,6 @@ const Profile = () => {
                         <div className={`${style.photo_place} ${flex.centered_column}`}>
                             <div className={`${style.photo} ${flex.centered_column}`} style={photo}>
                                 <img src={screenshot} className={style.screenshot}/>
-                                <img src={photoLogo} onClick={handleOpenCamera} className={style.photo_icon}/>
                             </div>
                             <div className={`${style.buttons} ${flex.centered_column}`}>
                                 <button

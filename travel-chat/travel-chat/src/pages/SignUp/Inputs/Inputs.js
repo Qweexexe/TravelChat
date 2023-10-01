@@ -3,10 +3,13 @@ import flex from "../../../components/Template/Template.module.css";
 import {passwordField, usernameField} from "../../../components/FormInputs/FormInputs";
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
+import {useDispatch} from "react-redux";
+import {setAuthInfo} from "../../../components/redux/actions/actions";
 
 
 const Inputs = () => {
     const navigate = useNavigate()
+    const dispatch = useDispatch()
     const [fields, setFields] = useState({
         [usernameField.name]: '',
         [passwordField.name]: '',
@@ -31,6 +34,7 @@ const Inputs = () => {
 
     const handleClick = () => {
         if(usernameValid && passwordValid && fields.repeat === fields[passwordField.name] ){
+            dispatch(setAuthInfo(fields))
             navigate('/signup/account/profile/')
         }
     }

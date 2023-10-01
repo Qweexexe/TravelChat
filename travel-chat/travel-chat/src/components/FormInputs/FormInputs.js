@@ -1049,3 +1049,4 @@ export const countryList = [
   }
 ];
 
+export const genders = ['Male', 'Female', 'Don\'t want to answer']

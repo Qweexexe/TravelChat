@@ -5,18 +5,27 @@ import {
     usernameField,
     birthdayField,
     emailField,
-    countryList
+    countryList,
+    genders
 } from "../../../components/FormInputs/FormInputs";
 import {useState} from "react";
+import {useDispatch, useSelector} from "react-redux";
+import {Signup} from "../../../components/redux/actions/actions";
+import {useNavigate} from "react-router-dom";
+import {registerUser} from "../../../components/server/register";
 
 
 const Inputs = () => {
+    const data = useSelector(state => state.signUp)
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
     const [fields, setFields] = useState({
         [usernameField.name]: '',
         [surnameField.name]: '',
         [emailField.name]: '',
         [birthdayField.name]: '',
-        country: ''
+        country: 'Ukraine',
+        gender : 'Male'
     })
 
 
@@ -40,9 +49,19 @@ const Inputs = () => {
         setFields({...fields, country: e.target.value})
     }
 
+    const handleChangeBirth = (e) => {
+        setFields({...fields, birthday: e.target.value})
+    }
+
+    const handleChangeGender = (e) => {
+        setFields({...fields, gender: e.target.value})
+
+    }
     const handleLogClick = () => {
-        if (usernameValid && surnameValid && emailValid) {
-            alert('reg')
+        if (usernameValid && surnameValid && emailValid && fields.country && fields.gender) {
+            dispatch(Signup(fields))
+            registerUser(data)
+            navigate('/')
         }
     }
     return (
@@ -89,14 +108,31 @@ const Inputs = () => {
                     (<p className={style.message}>{emailField.errorMessage}</p>)
                 }
             </form>
+            <section className={`${style.country} ${flex.centered_column}`}>
+                <select name="select" value={fields.country} id="select" onChange={handleChangeCountry} className={style.select}>
+                    {
+                        countryList.map(country => (<option value={country.country}>{country.flag} {country.country}</option>))
+                    }
+                </select>
+            </section>
+            <section className={`${style.country} ${flex.centered_column} ${style.gender}`}>
+                <select name="select" value={fields.gender} id="select" onChange={handleChangeGender} className={style.select}>
+                    {
+                        genders.map(gender => (<option value={gender}>{gender}</option>))
+                    }
+                </select>
+            </section>
+            <section className={`${flex.centered_column} ${style.birth}`} >
+                {/*<label for="birth">Your birthday</label>*/}
+                <input type="date" name="" id="birth" onChange={handleChangeBirth}/>
+            </section>
             <div
                 className={`${style.button} ${flex.centered_column}`}
-                onClick={handleLogClick}>Sign in
+                onClick={handleLogClick}>Finish
             </div>
         </div>
     )
 }
-
 export default Inputs
 
 
