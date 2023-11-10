@@ -1,54 +1,113 @@
 .footer {
-    width: 100vw;
-    height: 100px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #0B1644;
+  width: 100vw;
+  background: #0b1644;
+  color: #fff;
+}
+
+.footer_wrap {
+  width: 100%;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+.footer_maininfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .footer_link_wrapper {
-    margin-right: 70px;
+  margin-right: 70px;
 }
 
 .footer_logo {
-    margin-left: 70px;
-    color: #ffffff;
+  margin-left: 25px;
+  color: #ffffff;
 }
 
 .footer_links {
-    margin-left: 70px;
-    color: #ffffff;
-    font-size: 20px;
-    font-weight: 700;
-    text-decoration: none;
+  margin-left: 70px;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
 }
 
-
-.footer_description {
-    width: 100vw;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #0B1644;
-
+.footer_secondaryinfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.year {
-    margin-left: 110px;
+.footer_privacypolicy_wrap {
+  display: flex;
+  margin-left: 65px;
+}
+
+.footer_privacypolicy_wrap > *:not(:last-child) {
+  margin-right: 30px;
+}
+
+.footer_privacypolicy_link {
+  color: #fff;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  text-decoration: none;
+}
+.footer_rules_link {
+  color: #fff;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  text-decoration: none;
+}
+
+.footer_year {
+  color: #fff;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.footer_author {
+  color: #fff;
+  margin-right: 110px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+/* .footer_description {
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0b1644;
+} */
+
+/* .year {
+  margin-left: 110px;
 }
 
 .authors {
-    margin-right: 110px;
+  margin-right: 110px;
 }
 
-.year, .authors {
-    color: #ffffff;
-}
+.year,
+.authors {
+  color: #ffffff;
+} */
 
-
-@media screen and (max-width: 1050px) {
-      .footer_links, .footer_description {
-        display: none;
-    }
+@media screen and (max-width: 1175px) {
+  .footer_links,
+  .footer_description,
+  .footer_link_wrapper,
+  .footer_secondaryinfo {
+    display: none;
+  }
 }

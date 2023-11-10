@@ -1,12 +1,6 @@
-* {
-  color: #0b1644;
-  /*outline: 1px solid red;*/
-}
+.privacy_policy {
+  width: 100vw;
 
-body {
-  overflow-x: hidden;
-}
-.App {
   display: flex;
   flex-direction: column;
   justify-content: center;

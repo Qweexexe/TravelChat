@@ -1,0 +1,61 @@
+.rule {
+  flex: 1;
+}
+
+.rules_wrap {
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.rules_head {
+  margin-bottom: 60px;
+  margin-top: 60px;
+
+  font-size: 76px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.rules_list {
+  padding-left: 20px;
+}
+
+.rules_list_item {
+  line-height: 200%;
+}
+
+.rules_text {
+  margin-bottom: 200px;
+
+  max-width: 770px;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+}
+
+@media (max-width: 1050px) {
+  .rules_text {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+  }
+  .rules_head {
+    font-size: 47px;
+    font-style: normal;
+    font-weight: 600;
+    margin-bottom: 40px;
+    margin-top: 100px;
+  }
+}
+@media (max-width: 780px) {
+  .rules_text {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+  }
+}
