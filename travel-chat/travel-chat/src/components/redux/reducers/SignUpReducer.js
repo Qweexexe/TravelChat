@@ -1,38 +1,38 @@
-
-
-
 const SingUpState = {
-    username : '',
-    password : '',
-    photo : '',
-    name : '',
-    email : '',
-    country : '',
-    gender : '',
-    birth : ''
-}
-
+  email: "",
+  password: "",
+  nickname: "",
+  //   photo: "",
+  first_name: "",
+  last_name: "",
+  //   country: "",
+  //   gender: "",
+  //   birth: "",
+};
 
 export const signUpReducer = (state = SingUpState, action) => {
-    switch (action.type) {
-        case "SIGN_UP":
-            return {
-                ...state,
-                ...action.payload
-            }
-        case "SET_PHOTO" :
-            return {
-                ...state,
-                photo: action.payload
-            }
+  switch (action.type) {
+    case "SIGN_UP":
+      return {
+        ...state,
+        // ...action.payload,
+        first_name: action.payload["first_name"],
+        last_name: action.payload["last_name"],
+        email: action.payload["email"],
+      };
+    case "SET_PHOTO":
+      return {
+        ...state,
+        photo: action.payload,
+      };
 
-        case "SET_AUTH" :
-            return {
-                ...state,
-                name: action.payload['username'],
-                password: action.payload['password']
-            }
-        default:
-            return state
-    }
-}
+    case "SET_AUTH":
+      return {
+        ...state,
+        nickname: action.payload["nickname"],
+        password: action.payload["password"],
+      };
+    default:
+      return state;
+  }
+};
