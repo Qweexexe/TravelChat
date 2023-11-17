@@ -50,7 +50,7 @@ const Head = ({ burger, search, scroll = false }) => {
             burger && <Burger toggle={toggleWindow} />
           ) : (
             <>
-              <ScrollBar sector={"header"} visible={scroll} />
+              <ScrollBar sector={"header"} visibleScroll={scroll} />
               <SingInButton sector={"header"} />
             </>
           )}
