@@ -13,11 +13,11 @@ const Welcome = () => {
   const handleTab = () => {
     setTabIndex((prev) => (prev += 1));
     if (tabIndex > 1) {
-      navigate("/");
+      navigate("/choose-chat-theme");
     }
   };
   const handleSkip = () => {
-    navigate("/");
+    navigate("/choose-chat-theme");
   };
   return (
     <div className={style.wrapper}>

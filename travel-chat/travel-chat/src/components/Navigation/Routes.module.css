@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+.wrap_invisible {
+  display: none;
+}
+
 .text {
   font-size: 22px;
   font-weight: 600;

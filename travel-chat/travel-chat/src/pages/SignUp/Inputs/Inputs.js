@@ -46,7 +46,6 @@ const Inputs = () => {
     ) {
       dispatch(setAuthInfo(fields));
       navigate("/signup/account/profile/");
-      // registerUser(fields)
     }
   };
 

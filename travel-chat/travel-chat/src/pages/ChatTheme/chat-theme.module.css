@@ -1,0 +1,215 @@
+input[type="checkbox"] {
+  /* Add if not using autoprefixer */
+  -webkit-appearance: none;
+  appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  background-color: #fff;
+  /* Not removed via appearance */
+  margin: 0;
+}
+
+.chat_theme_container {
+  margin: 0 auto;
+}
+
+.wrap_info {
+  margin-top: 150px;
+  width: 400px;
+  margin-bottom: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.chat_theme_title {
+  text-align: center;
+  margin-bottom: 30px;
+
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 42px;
+}
+
+.description {
+  padding: 10px;
+  margin-bottom: 40px;
+
+  border-radius: 12px;
+  border: 1px solid var(--secondary-background-illustration, #ffd9d7);
+  color: #0b1644;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+.chat_themes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px 35px;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.theme {
+  height: 70px;
+  flex: 0 1 45%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--text-color, #0b1644);
+
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px;
+
+  border-radius: 8px;
+  border: 1px solid var(--secondary-background-illustration, #d7d2e6);
+  border-radius: 4px;
+  border: 1px solid #d0d0d0;
+}
+
+.theme label {
+  cursor: pointer;
+  text-align: center;
+}
+
+.checked {
+  border: 1px solid var(--illustration-blue, #876fd1);
+}
+
+.gotochat_btn {
+  padding: 10px 0;
+
+  border-radius: 4px;
+  background: var(--main-accent-blue, #371e84);
+  color: var(--background, #fff7f6);
+  text-align: center;
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.disable {
+  padding: 10px 0;
+
+  border-radius: 4px;
+  background: #d7d2e6;
+  color: #fff7f6;
+  border: none;
+  text-align: center;
+
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+}
+
+.subtopic {
+  cursor: pointer;
+  position: relative;
+  border: none;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 22px;
+  text-align: center;
+}
+
+/* select option {
+  padding: 10px 50px 20px 20px;
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px;
+  text-overflow: "";
+}
+
+select:focus {
+  outline: none;
+} */
+
+.modal {
+  position: absolute;
+  width: 470px;
+  box-sizing: border-box;
+  top: -150px;
+  left: -70px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0px 4px 11px 5px rgba(11, 22, 68, 0.2);
+  margin-bottom: 20px;
+}
+
+.modal_header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.modal_title {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.modal_closebtn {
+  position: absolute;
+  right: 0px;
+  /* top: -10px; */
+}
+
+.input_wrap {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  margin-bottom: 40px;
+}
+
+.input_wrap input[type="radio"]:checked {
+  accent-color: black;
+}
+
+.modal_label {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px;
+  margin-bottom: -2px;
+  margin-left: 10px;
+}
+
+@media (max-width: 480px) {
+  .wrap_info {
+    width: 330px;
+    margin-top: 60px;
+  }
+  .theme {
+    height: 52px;
+    flex: 0 1 44%;
+    font-size: 14px;
+  }
+  .chat_theme_title {
+    font-size: 30px;
+  }
+  .description {
+    font-size: 10px;
+  }
+  .modal {
+    width: 350px;
+    top: -110px;
+    left: -28px;
+  }
+}

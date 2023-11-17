@@ -2,9 +2,11 @@ import { useNavigate } from "react-router-dom";
 import style from "./Routes.module.css";
 import { Link } from "react-scroll";
 
-const ScrollBar = ({ sector, toggle }) => {
+const ScrollBar = ({ sector, toggle, visibleScroll }) => {
   return (
-    <div className={style.wrapper}>
+    <div
+      className={visibleScroll ? `${style.wrapper}` : `${style.wrap_invisible}`}
+    >
       <Link
         className={`${style.link} ${style.text}`}
         style={sector === "footer" ? { color: "#FFF" } : { color: " #0b1644" }}

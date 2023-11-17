@@ -10,6 +10,7 @@ import ProfileEnd from "../pages/ProfileEnd/ProfileEnd";
 import PrivacyPolicy from "../pages/PrivacyPolicy/PrivacyPolicy";
 import Rules from "../pages/Rules/Rules";
 import Welcome from "../pages/Welcome/Welcome";
+import ChatTheme from "../pages/ChatTheme/ChatTheme";
 
 const Routers = () => {
   return (
@@ -27,6 +28,7 @@ const Routers = () => {
           <Route path="/rules" element={<Rules />} />
           <Route path="/welcome" element={<Welcome />} />
           <Route path="/discover" element={<Guest />} />
+          <Route path="/choose-chat-theme" element={<ChatTheme />} />
         </Routes>
       </BrowserRouter>
     </>

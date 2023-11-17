@@ -58,6 +58,87 @@ export const birthdayField = {
   placeholder: "Birthday",
   label: "Birthday",
 };
+export const subtopicList = [
+  // {
+  //   subtopic: "Extreme tourism",
+  //   disabled: true,
+  // },
+  {
+    id: 1,
+    subtopic: "Mountain tourism",
+    disabled: false,
+  },
+  {
+    id: 2,
+    subtopic: "Festivals",
+    disabled: false,
+  },
+  {
+    id: 3,
+    subtopic: "Speleotourism",
+    disabled: false,
+  },
+  {
+    id: 4,
+    subtopic: "Sports tourism",
+    disabled: false,
+  },
+  {
+    id: 5,
+    subtopic: "Beach holiday",
+    disabled: false,
+  },
+  {
+    id: 6,
+    subtopic: "Religious tourism",
+    disabled: false,
+  },
+  {
+    id: 7,
+    subtopic: "Cycling tourism",
+    disabled: false,
+  },
+  {
+    id: 8,
+    subtopic: "Adventure tourism",
+    disabled: false,
+  },
+  {
+    id: 9,
+    subtopic: "Water tourism",
+    disabled: false,
+  },
+  {
+    id: 10,
+    subtopic: "Ecological tourism",
+    disabled: false,
+  },
+  {
+    id: 11,
+    subtopic: "Hiking tourism",
+    disabled: false,
+  },
+  {
+    id: 12,
+    subtopic: "Railway tourism",
+    disabled: false,
+  },
+  {
+    id: 13,
+    subtopic: "Industrial tourism",
+    disabled: false,
+  },
+  {
+    id: 14,
+    subtopic: "LGBT tourism",
+    disabled: false,
+  },
+  {
+    id: 15,
+    subtopic: "Medical tourism",
+    disabled: false,
+  },
+];
 
 export const countryList = [
   {

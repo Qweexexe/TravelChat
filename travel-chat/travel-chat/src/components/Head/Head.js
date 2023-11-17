@@ -9,7 +9,7 @@ import Burger from "../../common/Burger/Burger";
 import ScrollBar from "../Navigation/ScrollBar";
 import SingInButton from "../SingInButton/SingInButton";
 
-const Head = ({ burger, search }) => {
+const Head = ({ burger, search, scroll = false }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
@@ -50,11 +50,11 @@ const Head = ({ burger, search }) => {
             burger && <Burger toggle={toggleWindow} />
           ) : (
             <>
-              <ScrollBar sector={"header"} />
+              <ScrollBar sector={"header"} visible={scroll} />
               <SingInButton sector={"header"} />
             </>
           )}
-          {isOpen && <MobileNav toggle={toggleWindow} />}
+          {isOpen && <MobileNav toggle={toggleWindow} visibleScroll={true} />}
         </nav>
       </div>
     </header>
