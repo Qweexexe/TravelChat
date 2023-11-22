@@ -1,13 +1,16 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 import Routers from "./routes/routes";
+import { TokenProvider } from "./hooks/useToken";
 
 function App() {
-    return (
-        <div className="App">
-            <Routers/>
-        </div>
-    );
+  return (
+    <TokenProvider>
+      <div className="App">
+        <Routers />
+      </div>
+    </TokenProvider>
+  );
 }
 
 export default App;

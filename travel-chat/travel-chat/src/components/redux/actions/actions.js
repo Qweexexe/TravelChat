@@ -31,3 +31,8 @@ export const setThemesInfo = (payload) => ({
   type: "SET_THEMES_INFO",
   payload,
 });
+
+export const setCurrentChat = (payload) => ({
+  type: "SET_CURRENT_CHAT",
+  payload,
+});

@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setThemesInfo } from "../../components/redux/actions/actions";
 import { subtopicList } from "../../components/FormInputs/FormInputs";
 import CloseBtn from "../../components/assets/CloseModalImg.png";
+import { useNavigate } from "react-router-dom";
 
 const ChatTheme = () => {
   const [isChecked, setIsChecked] = useState({
@@ -18,6 +19,7 @@ const ChatTheme = () => {
   const [isCheckedSubtopic, setIsCheckedSubtopic] = useState(true);
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const themes = useSelector((state) => state.themes);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -39,6 +41,7 @@ const ChatTheme = () => {
 
   const handleClick = () => {
     dispatch(setThemesInfo(isChecked));
+    navigate("/chats");
   };
 
   const removeSubTopic = () => {

@@ -1,5 +1,8 @@
 import style from "./Inputs.module.css";
 import flex from "../../../components/Template/Template.module.css";
+import { useToken } from "../../../hooks/useToken";
+import axios from "axios";
+import { BASE_URL } from "../../../env";
 import {
   surnameField,
   usernameField,
@@ -13,7 +16,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Signup } from "../../../components/redux/actions/actions";
 import { useNavigate } from "react-router-dom";
-import { registerUser } from "../../../components/server/register";
+// import { registerUser } from "../../../components/server/register";
 
 const Inputs = () => {
   const data = useSelector((state) => state.signUp);
@@ -42,6 +45,8 @@ const Inputs = () => {
     setFields({ ...fields, [first_nameField.name]: e.target.value });
   };
 
+  const { updateToken } = useToken();
+
   const handleChangeSurname = (e) => {
     setFields({ ...fields, [surnameField.name]: e.target.value });
   };
@@ -61,6 +66,17 @@ const Inputs = () => {
   const handleChangeGender = (e) => {
     setFields({ ...fields, gender: e.target.value });
   };
+
+  const registerUser = async (data) => {
+    const res = await axios.post(`${BASE_URL}/register`, JSON.stringify(data), {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    console.log(res.data);
+    updateToken(localStorage.setItem("access", JSON.stringify(res.data)));
+  };
+
   const handleLogClick = () => {
     if (
       usernameValid &&

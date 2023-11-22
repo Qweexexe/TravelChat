@@ -1,18 +1,25 @@
 import style from "./Inputs.module.css";
 import flex from "../../../components/Template/Template.module.css";
+import axios from "axios";
+import { BASE_URL } from "../../../env";
 import {
   usernameField,
   passwordField,
   emailField,
 } from "../../../components/FormInputs/FormInputs";
 import { useState } from "react";
-import { LoginRequest } from "../../../components/server/login";
+// import { LoginRequest } from "../../../components/server/login";
+import { useNavigate } from "react-router-dom";
+import { useToken } from "../../../hooks/useToken";
 
 const Inputs = () => {
+  const navigate = useNavigate();
   const [fields, setFields] = useState({
     [emailField.name]: "",
     [passwordField.name]: "",
   });
+
+  const { updateToken } = useToken();
 
   const emailFieldValid = new RegExp(emailField.pattern).test(
     fields[emailField.name]
@@ -27,6 +34,20 @@ const Inputs = () => {
 
   const handleChangePassword = (e) => {
     setFields({ ...fields, [passwordField.name]: e.target.value });
+  };
+
+  const LoginRequest = async (email, password) => {
+    const data = { email, password };
+    //   console.log(data);
+
+    const res = await axios.post(`${BASE_URL}/login`, JSON.stringify(data), {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    navigate("/chats");
+    updateToken(localStorage.setItem("access", JSON.stringify(res.data)));
   };
 
   const handleLogClick = () => {

@@ -1,7 +1,7 @@
 import style from "./Description.module.css";
 import { Link } from "react-router-dom";
 
-const DescriptionSignIn = () => {
+const DescriptionSignIn = () => { 
   return (
     <div className={`${style.description_wrapper} ${style.centered_column}`}>
       <div className={`${style.description_el} ${style.centered_row}`}>

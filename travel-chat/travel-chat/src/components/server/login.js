@@ -10,7 +10,7 @@ export const LoginRequest = async (email, password) => {
       "Content-Type": "application/json",
     },
   });
-  localStorage.setItem("access", res.data);
-  const token = localStorage.getItem("access");
-  console.log(token);
+  localStorage.setItem("access", JSON.stringify(res.data));
+  // const token = JSON.parse(localStorage.getItem("access"));
+  // console.log(token);
 };
