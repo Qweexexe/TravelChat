@@ -36,3 +36,7 @@ export const setCurrentChat = (payload) => ({
   type: "SET_CURRENT_CHAT",
   payload,
 });
+export const setUserProfile = (payload) => ({
+  type: "SET_USER_PROFILE",
+  payload,
+});
